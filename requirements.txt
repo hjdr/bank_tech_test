@@ -1,0 +1,20 @@
+You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
+Deposits, withdrawal.
+Account statement (date, amount, balance) printing.
+Data can be kept in memory (it doesn't need to be stored to a database or anything).
+
+Given I am a bank account holder
+When I make a deposit of 200
+Then the balance increases by 200
+
+Given I am a bank account holder
+When I make a withdrawal of 100
+Then the balance decreases by 100
+
+Given I am a bank account holder
+When I make a withdrawal or deposit
+Then the statement saves the transaction amount, date and balance
+
+Given I am a bank account holder
+When I wan to see a history of transactions
+Then the statement shows me the list of historic transactions
