@@ -1,0 +1,1 @@
+import Account from '../../app/account';
