@@ -1,6 +1,6 @@
 export default class Transaction {
   constructor() {
-    this.amount = 0
+    this.amount = 0;
   }
 
   credit(input_amount) {
@@ -10,4 +10,8 @@ export default class Transaction {
   debit(input_amount) {
     this.amount -= input_amount;
     }
+
+  getAmount() {
+    return this.amount;
+  }
 }
