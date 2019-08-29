@@ -67,16 +67,34 @@ test('withdraw multiple times from bank account', () => {
 // When I make a withdrawal or deposit
 // Then the statement saves the transaction amount, date and balance
 
-test('account saves transactions', () => {
-  var account = new Account();
+describe ('account saves transaction in statement', () => {
 
-  var transaction = new Transaction();
-  transaction.credit(2000);
-  account.statementInsert(transaction);
+  beforeEach(() => {
+  });
 
-  var transaction = new Transaction();
-  transaction.debit(500);
-  account.statementInsert(transaction);
+  test('account statement transaction contain amounts', () => {
+    var account = new Account();
 
-  expect(account.statement[1].getAmount()).toEqual(-500);
+    var transaction = new Transaction();
+    transaction.credit(2000);
+    account.statementInsert(transaction);
+
+    var transaction = new Transaction();
+    transaction.debit(500);
+    account.statementInsert(transaction);
+    expect(account.statement[1].getAmount()).toEqual(-500);
+  });
+
+  test('account statement transaction contain amounts', () => {
+    var account = new Account();
+
+    var transaction = new Transaction();
+    transaction.credit(2000);
+    account.statementInsert(transaction);
+
+    var transaction = new Transaction();
+    transaction.debit(500);
+    account.statementInsert(transaction);
+    expect(account.statement[1].getDate()).toEqual(new Date());
+  });
 });

@@ -1,13 +1,24 @@
 import Transaction from '../../app/transaction';
+import { stubDate } from '../test_helper/date-helper';
 
-test('allows amount to be deposited to bank', () => {
+const constantDate = new Date('2017-06-13T04:41:20')
+
+stubDate(constantDate)
+
+test('creates a credit transaction', () => {
   var transaction = new Transaction();
   transaction.credit(1000);
-  expect(transaction.amount).toEqual(1000);
+  expect(transaction.getAmount()).toEqual(1000);
 });
 
-test('allows amount to be withdrawn from bank', () => {
+test('creates a debit transaction', () => {
   var transaction = new Transaction();
   transaction.debit(500)
-  expect(transaction.amount).toEqual(-500)
+  expect(transaction.getAmount()).toEqual(-500)
+});
+
+test('creates a date for the transaction', () => {
+  var transaction = new Transaction();
+  transaction.debit(500)
+  expect(transaction.getDate()).toEqual(constantDate)
 });
