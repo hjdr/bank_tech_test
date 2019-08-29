@@ -78,5 +78,5 @@ test('account saves transactions', () => {
   transaction.debit(500);
   account.statementInsert(transaction);
 
-  expect(account.statement[1].amount).toEqual(-500);
+  expect(account.statement[1].getAmount()).toEqual(-500);
 });

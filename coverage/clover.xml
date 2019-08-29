@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1567069813515" clover="3.2.0">
-  <project timestamp="1567069813515" name="All files">
-    <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6" elements="12" coveredelements="12" complexity="0" loc="6" ncloc="6" packages="1" files="2" classes="2"/>
+<coverage generated="1567075435258" clover="3.2.0">
+  <project timestamp="1567075435258" name="All files">
+    <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6" elements="14" coveredelements="14" complexity="0" loc="8" ncloc="8" packages="1" files="2" classes="2"/>
     <file name="account.js" path="/Users/harryriley/GoogleDrive/Harry/Python/makers/Projects/makers-course/week_10/bank_tech_test/app/account.js">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="3" count="6" type="stmt"/>
-      <line num="7" count="11" type="stmt"/>
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="3" count="9" type="stmt"/>
+      <line num="4" count="9" type="stmt"/>
+      <line num="8" count="17" type="stmt"/>
+      <line num="9" count="17" type="stmt"/>
     </file>
     <file name="transaction.js" path="/Users/harryriley/GoogleDrive/Harry/Python/makers/Projects/makers-course/week_10/bank_tech_test/app/transaction.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
