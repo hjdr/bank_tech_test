@@ -1,9 +1,4 @@
 import Transaction from '../../app/transaction';
-import { stubDate } from '../test_helper/date-helper';
-
-const constantDate = new Date('2017-06-13T04:41:20')
-
-stubDate(constantDate)
 
 test('creates a credit transaction', () => {
   var transaction = new Transaction();
@@ -17,8 +12,12 @@ test('creates a debit transaction', () => {
   expect(transaction.getAmount()).toEqual(-500)
 });
 
+
 test('creates a date for the transaction', () => {
+  Transaction.prototype.createDate = jest.fn();
   var transaction = new Transaction();
+
+  transaction.createDate.mockImplementation(() => '13/06/2017' )
   transaction.debit(500)
-  expect(transaction.getDate()).toEqual(constantDate)
+  expect(transaction.createDate()).toEqual('13/06/2017')
 });

@@ -8,5 +8,8 @@
   },
   "scripts": {
     "test": "jest"
+  },
+  "dependencies": {
+    "moment": "^2.24.0"
   }
 }

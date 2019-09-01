@@ -1,5 +1,8 @@
 import Transaction from '../../app/transaction';
 import Account from '../../app/account';
+var moment = require('moment');
+
+const date = moment().format('D/MM/YYYY');
 
 // Given I am a bank account holder
 // When I make a deposit of 1000
@@ -82,10 +85,10 @@ describe ('account saves transaction in statement', () => {
     var transaction = new Transaction();
     transaction.debit(500);
     account.statementInsert(transaction);
-    expect(account.statement[1].getAmount()).toEqual(-500);
+    expect(account.statement[1].transaction.amount).toEqual(-500);
   });
 
-  test('account statement transaction contain amounts', () => {
+  test('account statement transaction contain dates', () => {
     var account = new Account();
 
     var transaction = new Transaction();
@@ -95,6 +98,20 @@ describe ('account saves transaction in statement', () => {
     var transaction = new Transaction();
     transaction.debit(500);
     account.statementInsert(transaction);
-    expect(account.statement[1].getDate()).toEqual(new Date());
+    expect(account.statement[1].transaction.date).toEqual(date);
+  });
+
+  test('account statement contain running balances', () => {
+    var account = new Account();
+
+    var transaction = new Transaction();
+    transaction.credit(2000);
+    account.statementInsert(transaction);
+
+    var transaction = new Transaction();
+    transaction.debit(500);
+    account.statementInsert(transaction);
+
+    account.statementPrint();
   });
 });

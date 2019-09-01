@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 export default class Transaction {
   constructor() {
     this.amount = 0;
@@ -5,20 +7,25 @@ export default class Transaction {
   }
 
   credit(input_amount) {
-  this.amount += input_amount;
-  this.date = new Date();
+    this.amount += input_amount;
+    this.createDate()
   }
 
   debit(input_amount) {
     this.amount -= input_amount;
-    this.date = new Date();
+    this.createDate()
   }
 
   getAmount() {
     return this.amount;
   }
 
-  getDate(date) {
+  getDate() {
     return this.date;
   }
+
+  createDate() {
+    var date = moment().format('D/MM/YYYY');
+    this.date = date
+  } 
 }
